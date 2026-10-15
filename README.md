@@ -54,6 +54,15 @@
 
 **自动阶段**：`autonomous()` 由 `PIDForward(编码器度数, 最高速, 容差)` 与 `PIDTurnTo(目标角, 最高速, 容差)` 串联成路线，中间用 `wait()` 稳车；吸球段按 `ColorSensor.hue()` 阈值判断来球颜色，识到对方颜色就反转部分吸球电机把球吐掉（`intake_move` 的 7 个参数分别控制 7 个电机方向）。`周钟文push` 的自动阶段拆成 `rightAutonomous` / `leftAutonomous_basic` / `leftAutonomous_defence` / `leftAutonomous_defence_with_throw` 多套，并用 `normalize_angle` / `constrain` / `pid_correction` 做浮点航向修正。
 
+## 演示视频
+
+| 文件 | 时长 | 分辨率 | 内容 |
+|---|---|---|---|
+| `demo/演示视频-1.mp4` | 27 s | 1280×720 | 操作手手柄遥控机器人在场地内取球、搬运、投放 |
+| `demo/演示视频-2.mp4` | 15 s | 568×320 | 机器人机械臂抓取 / 搬运球，场边配合摆球 |
+
+两个视频均为 H.264 + AAC 编码并已加 `faststart`，浏览器可直接播放。
+
 ## 构建
 
 用 VEX Robotics 官方 VSCode 扩展（`vexrobotics.vexcode`）打开工程目录，构建 / 下载到 V5 Brain；`makefile` 与 `vex/*.mk` 是扩展调用的命令行构建链，需要本地已安装 VEX V5 工具链与 SDK。
