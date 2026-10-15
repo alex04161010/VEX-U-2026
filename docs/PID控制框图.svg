@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="1090" viewBox="0 0 1340 1090">
+<defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#0b1420"/></marker><marker id="arwc" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#c0582f"/></marker></defs>
+<rect width="1340" height="1090" fill="#f4f0e8"/>
+<text x="50" y="64" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#0b1420" font-weight="700" font-style="normal">VEX 底盘 PID 控制框图</text>
+<text x="50" y="94" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#7a7264" font-weight="normal" font-style="italic">直行环读编码器、转向环读陀螺仪，两个环共用同一个 PID 内核</text>
+<line x1="50" y1="114" x2="1290" y2="114" stroke="#cfc7b6" stroke-width="1"/>
+<text x="50" y="156" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="17.5" fill="#0b1420" font-weight="700" font-style="normal">① 直行环  PIDForward()</text>
+<rect x="50" y="209" width="100" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="100.0" y="232.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">目标</text>
+<text x="100.0" y="251.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264">已取反</text>
+<path d="M150,240 L178,240" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<circle cx="208" cy="240" r="26" fill="#fffdf7" stroke="#0b1420" stroke-width="1.7"/>
+<text x="191" y="239" text-anchor="start" font-family="Consolas, 'Courier New', monospace" font-size="16" fill="#0b1420" font-weight="normal" font-style="normal">+</text>
+<text x="218" y="256" text-anchor="start" font-family="Consolas, 'Courier New', monospace" font-size="16" fill="#0b1420" font-weight="normal" font-style="normal">-</text>
+<path d="M234,240 L258,240" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<rect x="258" y="209" width="212" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="364.0" y="232.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">PID 运算</text>
+<text x="364.0" y="251.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264">Kp .155  Ki .01  Kd .01</text>
+<path d="M470,240 L512,240" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<rect x="512" y="209" width="172" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="598.0" y="232.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">限幅</text>
+<text x="598.0" y="251.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264">speedlimit ±60</text>
+<path d="M684,240 L726,240" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<rect x="726" y="209" width="168" height="62" rx="9" fill="#fffdf7" stroke="#c0582f" stroke-width="1.9"/>
+<text x="810.0" y="232.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">软启动斜坡</text>
+<text x="810.0" y="251.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="10.5" fill="#7a7264">× TAcc/500ms 仅一个方向</text>
+<path d="M894,240 L936,240" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<rect x="936" y="209" width="186" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="1029.0" y="232.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">电机 + 底盘</text>
+<text x="1029.0" y="251.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264">Move(OutPut_limit)</text>
+<path d="M1122,240 L1236,240" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<text x="1258" y="228" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#7a7264" font-weight="normal" font-style="italic">实际位移</text>
+<text x="1258" y="248" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#7a7264" font-weight="normal" font-style="italic">(度)</text>
+<path d="M1236,240 L1236,380 L208,380 L208,268" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<rect x="700" y="349" width="274" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="837.0" y="372.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">反馈</text>
+<text x="837.0" y="391.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264">(右编码 + 左编码) / 2</text>
+<text x="50" y="438" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="17.5" fill="#0b1420" font-weight="700" font-style="normal">② 转向环  PIDTurnTo()</text>
+<rect x="50" y="489" width="100" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="100.0" y="512.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">目标</text>
+<text x="100.0" y="531.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264">已取反</text>
+<path d="M150,520 L178,520" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<circle cx="208" cy="520" r="26" fill="#fffdf7" stroke="#0b1420" stroke-width="1.7"/>
+<text x="191" y="519" text-anchor="start" font-family="Consolas, 'Courier New', monospace" font-size="16" fill="#0b1420" font-weight="normal" font-style="normal">+</text>
+<text x="218" y="536" text-anchor="start" font-family="Consolas, 'Courier New', monospace" font-size="16" fill="#0b1420" font-weight="normal" font-style="normal">+</text>
+<path d="M234,520 L258,520" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<rect x="258" y="489" width="212" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="364.0" y="512.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">PID 运算</text>
+<text x="364.0" y="531.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264">Kp .75  Ki .03  Kd 0</text>
+<path d="M470,520 L512,520" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<rect x="512" y="489" width="172" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="598.0" y="512.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">限幅</text>
+<text x="598.0" y="531.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264">speedlimit ±100</text>
+<path d="M684,520 L936,520" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<text x="810" y="508" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#7a7264" font-weight="normal" font-style="italic">转向不做斜坡</text>
+<rect x="936" y="489" width="186" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="1029.0" y="512.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">电机 + 底盘</text>
+<text x="1029.0" y="531.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264">Rotate(OutPut_limit)</text>
+<path d="M1122,520 L1236,520" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<text x="1258" y="508" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#7a7264" font-weight="normal" font-style="italic">实际朝向</text>
+<text x="1258" y="528" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#7a7264" font-weight="normal" font-style="italic">yaw (度)</text>
+<path d="M1236,520 L1236,660 L208,660 L208,548" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<rect x="700" y="629" width="274" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="837.0" y="652.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">反馈</text>
+<text x="837.0" y="671.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264">Gyro.orientation(yaw)</text>
+<text x="240" y="700" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#7a7264" font-weight="normal" font-style="italic">反馈在代码里写成加号：yaw 的正方向和 Rotate 的正方向是反的</text>
+<text x="50" y="764" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="17.5" fill="#0b1420" font-weight="700" font-style="normal">③ PID 内核  UpdatePIDController()  两个环共用</text>
+<rect x="50" y="854" width="92" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="96.0" y="885.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">误差 e</text>
+<path d="M142,885 L175,885" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<path d="M175,804 L175,966" stroke="#0b1420" stroke-width="1.7" fill="none"/>
+<path d="M175,804 L198,804" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<path d="M175,885 L198,885" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<path d="M175,966 L198,966" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<rect x="198" y="776" width="330" height="56" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="363.0" y="796.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">比例项  Kp × e</text>
+<text x="363.0" y="815.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#7a7264">误差直接乘 Kp</text>
+<rect x="198" y="857" width="330" height="56" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="363.0" y="877.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">积分项  Ki × Σe</text>
+<text x="363.0" y="896.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#7a7264">|e| &lt; 30 且 e ≠ 0 才累加，否则清零</text>
+<rect x="198" y="938" width="330" height="56" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="363.0" y="958.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">微分项  Kd × (e − e_last)</text>
+<text x="363.0" y="977.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#7a7264">误差的变化量，不是测量值的变化量</text>
+<path d="M528,804 L572,804" stroke="#0b1420" stroke-width="1.7" fill="none"/>
+<path d="M528,885 L572,885" stroke="#0b1420" stroke-width="1.7" fill="none"/>
+<path d="M528,966 L572,966" stroke="#0b1420" stroke-width="1.7" fill="none"/>
+<path d="M572,804 L572,966" stroke="#0b1420" stroke-width="1.7" fill="none"/>
+<path d="M572,885 L594,885" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<circle cx="620" cy="885" r="26" fill="#fffdf7" stroke="#0b1420" stroke-width="1.7"/>
+<text x="603" y="884" text-anchor="start" font-family="Consolas, 'Courier New', monospace" font-size="16" fill="#0b1420" font-weight="normal" font-style="normal">+</text>
+<path d="M646,885 L688,885" stroke="#0b1420" stroke-width="1.7" fill="none" marker-end="url(#arw)"/>
+<rect x="688" y="854" width="192" height="62" rx="9" fill="#fffdf7" stroke="#0b1420" stroke-width="1.5"/>
+<text x="784.0" y="877.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0b1420">输出</text>
+<text x="784.0" y="896.0" text-anchor="middle" dominant-baseline="middle" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264">Output (int 截断)</text>
+<rect x="940" y="800" width="350" height="170" rx="9" fill="#fffdf7" stroke="#c0582f" stroke-width="1.9"/>
+<text x="958" y="832" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#0b1420" font-weight="600" font-style="normal">退出条件（每个环各判一次）</text>
+<text x="958" y="862" text-anchor="start" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264" font-weight="normal" font-style="normal">|e| ≤ tol   → insidetarget = true</text>
+<text x="958" y="886" text-anchor="start" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264" font-weight="normal" font-style="normal">出界       → insidetarget = false</text>
+<text x="958" y="910" text-anchor="start" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264" font-weight="normal" font-style="normal">              T2.clear()</text>
+<text x="958" y="934" text-anchor="start" font-family="Consolas, 'Courier New', monospace" font-size="11.5" fill="#7a7264" font-weight="normal" font-style="normal">while ( !insidetarget || T2 &lt; 100ms )</text>
+<text x="958" y="958" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" fill="#c0582f" font-weight="normal" font-style="italic">直行 100ms / 转向 200ms</text>
+<text x="50" y="1050" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#7a7264" font-weight="normal" font-style="italic">珊瑚色框 = 代码里比较特别、也容易踩坑的处理</text>
+</svg>

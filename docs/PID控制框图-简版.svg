@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="930" viewBox="0 0 1200 930"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#0b1420"/></marker></defs>
+<rect width="1200" height="930" fill="#f4f0e8"/>
+<text x="50" y="60" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#0b1420" font-weight="700" font-style="normal">VEX 机器人 PID 控制框图</text>
+<text x="50" y="92" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#7a7264" font-weight="normal" font-style="italic">就一句话：不停比较「还差多少」，再按差多少决定电机转多快。</text>
+<line x1="50" y1="112" x2="1150" y2="112" stroke="#cfc7b6" stroke-width="1"/>
+<rect x="50" y="255" width="160" height="70" rx="10" fill="#fffdf7" stroke="#0b1420" stroke-width="1.6"/>
+<text x="130.0" y="281.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#0b1420">目标值</text>
+<text x="130.0" y="303.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7a7264">想走多远 / 转多少度</text>
+<path d="M210,290 L240,290" stroke="#0b1420" stroke-width="1.8" fill="none" marker-end="url(#arw)"/>
+<circle cx="270" cy="290" r="28" fill="#fffdf7" stroke="#0b1420" stroke-width="1.8"/>
+<text x="251" y="286" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" fill="#0b1420" font-weight="normal" font-style="normal">+</text>
+<text x="280" y="310" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" fill="#0b1420" font-weight="normal" font-style="normal">−</text>
+<path d="M298,290 L346,290" stroke="#0b1420" stroke-width="1.8" fill="none" marker-end="url(#arw)"/>
+<text x="322" y="272" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" fill="#c0582f" font-weight="normal" font-style="italic">误差</text>
+<rect x="348" y="255" width="200" height="70" rx="10" fill="#fffdf7" stroke="#0b1420" stroke-width="1.6"/>
+<text x="448.0" y="281.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#0b1420">PID 控制器</text>
+<text x="448.0" y="303.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7a7264">按「差多少」算速度</text>
+<path d="M548,290 L588,290" stroke="#0b1420" stroke-width="1.8" fill="none" marker-end="url(#arw)"/>
+<rect x="588" y="255" width="150" height="70" rx="10" fill="#fffdf7" stroke="#0b1420" stroke-width="1.6"/>
+<text x="663.0" y="281.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#0b1420">电机</text>
+<text x="663.0" y="303.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7a7264">转起来</text>
+<path d="M738,290 L778,290" stroke="#0b1420" stroke-width="1.8" fill="none" marker-end="url(#arw)"/>
+<rect x="778" y="255" width="190" height="70" rx="10" fill="#fffdf7" stroke="#0b1420" stroke-width="1.6"/>
+<text x="873.0" y="281.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#0b1420">机器人移动</text>
+<text x="873.0" y="303.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7a7264">真的走过去了</text>
+<text x="1040" y="280" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#7a7264" font-weight="normal" font-style="italic">实际位置</text>
+<text x="1040" y="302" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#7a7264" font-weight="normal" font-style="italic">/ 实际角度</text>
+<rect x="560" y="444" width="300" height="62" rx="10" fill="#fffdf7" stroke="#c0582f" stroke-width="2"/>
+<text x="710.0" y="466.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="600" fill="#0b1420">传感器测量</text>
+<text x="710.0" y="488.0" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#7a7264">编码器 / 陀螺仪</text>
+<path d="M968,290 L1030,290 L1030,475 L866,475" stroke="#0b1420" stroke-width="1.8" fill="none" marker-end="url(#arw)"/>
+<path d="M554,475 L270,475 L270,320" stroke="#0b1420" stroke-width="1.8" fill="none" marker-end="url(#arw)"/>
+<text x="50" y="505" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" fill="#7a7264" font-weight="normal" font-style="italic">反馈：把实际走到哪送回来相减，得到新的误差，下一轮再算</text>
+<text x="50" y="588" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="18" fill="#0b1420" font-weight="700" font-style="normal">PID 里其实是三个零件，各管一件事</text>
+<rect x="50" y="612" width="340" height="118" rx="10" fill="#fffdf7" stroke="#0b1420" stroke-width="1.6"/>
+<text x="72" y="648" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="19" fill="#0b1420" font-weight="600" font-style="normal">P 比例</text>
+<text x="72" y="682" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0b1420" font-weight="normal" font-style="normal">差得越远，给的速度越大</text>
+<text x="72" y="708" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#7a7264" font-weight="normal" font-style="italic">走长途主要靠它</text>
+<rect x="430" y="612" width="340" height="118" rx="10" fill="#fffdf7" stroke="#c0582f" stroke-width="2"/>
+<text x="452" y="648" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="19" fill="#0b1420" font-weight="600" font-style="normal">I 积分</text>
+<text x="452" y="682" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0b1420" font-weight="normal" font-style="normal">老是差一点点，就慢慢加力</text>
+<text x="452" y="708" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#7a7264" font-weight="normal" font-style="italic">专门啃最后那点小误差</text>
+<rect x="810" y="612" width="340" height="118" rx="10" fill="#fffdf7" stroke="#0b1420" stroke-width="1.6"/>
+<text x="832" y="648" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="19" fill="#0b1420" font-weight="600" font-style="normal">D 微分</text>
+<text x="832" y="682" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0b1420" font-weight="normal" font-style="normal">快到了提前松油门</text>
+<text x="832" y="708" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#7a7264" font-weight="normal" font-style="italic">防止冲过头来回晃</text>
+<text x="50" y="790" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="18" fill="#0b1420" font-weight="700" font-style="normal">你的代码里就是这两个环，区别只在「用什么测」</text>
+<rect x="50" y="812" width="530" height="92" rx="10" fill="#fffdf7" stroke="#0b1420" stroke-width="1.6"/>
+<text x="72" y="848" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" fill="#0b1420" font-weight="600" font-style="normal">直行</text>
+<text x="150" y="848" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#7a7264" font-weight="normal" font-style="normal">看轮子转了多少度（编码器）</text>
+<text x="72" y="880" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#7a7264" font-weight="normal" font-style="normal">走到指定距离就停</text>
+<rect x="620" y="812" width="530" height="92" rx="10" fill="#fffdf7" stroke="#0b1420" stroke-width="1.6"/>
+<text x="642" y="848" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" fill="#0b1420" font-weight="600" font-style="normal">转向</text>
+<text x="720" y="848" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#7a7264" font-weight="normal" font-style="normal">看现在朝哪边（陀螺仪）</text>
+<text x="642" y="880" text-anchor="start" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#7a7264" font-weight="normal" font-style="normal">转到指定角度就停</text>
+</svg>

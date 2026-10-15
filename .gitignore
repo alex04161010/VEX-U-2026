@@ -1,0 +1,12 @@
+# build output
+bin/
+build/
+*.o
+*.d
+*.obj
+compile_commands.json
+
+# editor / OS
+.vscode/ipch/
+Thumbs.db
+.DS_Store
